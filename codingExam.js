@@ -6,8 +6,11 @@ button1.addEventListener("click", function(){
     let downPayment = window.prompt("Enter down payment as a percentage (0-100): ")
     let downpaymentamount = loanAmount * (downPayment / 100)
     let interestRate = 0.0575
-    let termYears = window.prompt("Enter term years (30 or 15)")
-
+    let termYears = Number(window.prompt("Enter term years (30 or 15)"))
+    if (termYears != 15 && termYears != 30){
+        window.alert("didnt enter 15 or 30 years")
+        window.close()
+      }
     let PrincipalLoanAmount = loanAmount - (downPayment * loanAmount)
     PrincipalLoanAmount1 = document.createElement("p")
     PrincipalLoanAmount1.textContent = "principle loan amount " + PrincipalLoanAmount
@@ -46,4 +49,3 @@ button1.addEventListener("click", function(){
     }
 
 })
-
